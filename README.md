@@ -1,15 +1,22 @@
-# TCOM-500-UHF-Project
+# UHF SATCOM Streaming over Local Area Network
 
 The goal of this project is to capture a RF TV broadcast signal via a software defined radio (SDR), demodulate those samples into an ATSC transport stream with SDR tools, configure TVHeadend on a RasPi to stream the decoded channels as a LAN service, then stream those channels via Wi-Fi using TVHeadend.  This is similar to how most LAN TV SATCOM streaming services are done today (such as Dish).
 
-Major Milestones:
+End Goal:
+Watch a live UHF tv broadcast streamed from a software defined radio (SDR) receiver connected to a raspberry pi serving as a server.
 
-1) Connect SDR and ATSC-tuned antenna to RasPi 5
-2) Capture Raw RF TV signal with SDR (~470-700 MHz)
-3) Use a Linux SDR such as atsc-demod or GNU Radio to generate an MPEG transport stream
-4) Install and configure TVHeadend on the RasPi to be able to accept the data stream
-5) Expose the service on a local LAN and validate the playback on another device
-6) Note: this must all be containerized and run via docker
+Key Milestones:
+1) Use a raspberry pi (in this case a Rasp Pi 5) to act as a local receiver server
+2) Configure the software defined radio (in this case a RSPdx-R2) to receive and decode ATSC transport signals over UHF.
+   - The goal is to do this in real time, however preliminary research shows that live decoding via GNU radio for extended periods is not feasible.
+   - In the event live-streaming cannot be completed, recording of received signal and playback of recording via GNU radio will be attempted instead
+3) Stream the received signal from another device on the LAN, such as a laptop or computer
+
+Additional tasks:
+1) Creation of block diagram to show connections and data flow
+2) Analysis of work completed to ensure final end goal is achieved (verification and validation)
+3) Docker container of code deployed to raspberry pi for SDR and ATSC processing
+4) Completed ReadMe
 
 Materials needed:
 UHF antenna - SMA-W100RX2
