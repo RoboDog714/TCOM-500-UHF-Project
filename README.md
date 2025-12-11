@@ -13,13 +13,23 @@ Key Milestones:
 3) Stream the received signal from another device on the LAN, such as a laptop or computer
 
 Additional tasks:
-1) Creation of block diagram to show connections and data flow
+1) Creation of block diagram to show connections and data flow - Complete
 2) Analysis of work completed to ensure final end goal is achieved (verification and validation)
 3) Docker container of code deployed to raspberry pi for SDR and ATSC processing
 4) Completed ReadMe
 
-Materials needed:
+Hardware required:
 UHF antenna - SMA-W100RX2
 SDR - RSPdx-R2
 Rasperry Pi 5
 
+Software required:
+- PiOS
+- GNU Radio
+- SDRPlay
+- TVHeadend
+- NOTE:  Above software can all be found in the preloaded image, pisdr, from luigifcruz:  https://github.com/luigifcruz/pisdr-image
+
+Within Documents folder:
+- Wire diagram showing input stream flow starting from UHF stream
+- CSV and Excel Spreadsheet of most recent requirements matrix
