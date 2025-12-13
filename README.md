@@ -33,3 +33,8 @@ Software required:
 Within Documents folder:
 - Wire diagram showing input stream flow starting from UHF stream
 - CSV and Excel Spreadsheet of most recent requirements matrix
+
+Within GRC folder:
+- The RSPdx-R2.grc file, which contains the flow graph for the SDR to decode ATSC and stream to a local VLC player
+- The fileStream_ATSC.grc file, the flow graph for converting the sample.ts transport stream into a cf32 file for testing
+- The cf32_Stream.grc file, which contains the flow graph for converting the cf32 test file into a video stream that mimics the process of the SDR flow graph while using the sample transport stream
