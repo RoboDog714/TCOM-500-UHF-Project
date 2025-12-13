@@ -25,16 +25,23 @@ Rasperry Pi 5
 
 Software required:
 - PiOS
-- GNU Radio
-- SDRPlay
-- TVHeadend
-- NOTE:  Above software can all be found in the preloaded image, pisdr, from luigifcruz:  https://github.com/luigifcruz/pisdr-image
+- GNU Radio - can be installed with 'sudo apt-get install gnuradio'
+- SDRPlay - Optional for testing only, not necessary for final run (and is excluded from the Docker container)
+- TVHeadend - Package that can be installed with 'sudo apt-get tvheadend'.  This will prompt for a username and password on first installation
+- SDRPlay API - Found here: 
+- gr-sdrplay3 - GNU Radio module that enables compatibility between GNU Radio and RSPdx-R2 - Open Source found here: 
+
+Within Docker folder:
+- The docker container to build the required software configuration for the Raspberry Pi
+- NOTE:  CLAUDE AI WAS USED TO HELP WRITE THE DOCKER CONTAINER AS I AM UNFAMILIAR WITH DOCKER
+- NOTE 2: MUST HAVE PiOS5 INSTALLED ALREADY ONTO RASPBERRY PI
+- NOTE 3: DO NOT HAVE SDR PLUGGED IN FOR INITIAL BUILD, RADIO MUST BE PLUGGED IN AFTER FINAL BUILD
 
 Within Documents folder:
 - Wire diagram showing input stream flow starting from UHF stream
 - CSV and Excel Spreadsheet of most recent requirements matrix
 
-Within GRC folder:
+Within GNU Radio GRC folder:
 - The RSPdx-R2.grc file, which contains the flow graph for the SDR to decode ATSC and stream to a local VLC player
 - The fileStream_ATSC.grc file, the flow graph for converting the sample.ts transport stream into a cf32 file for testing
 - The cf32_Stream.grc file, which contains the flow graph for converting the cf32 test file into a video stream that mimics the process of the SDR flow graph while using the sample transport stream
