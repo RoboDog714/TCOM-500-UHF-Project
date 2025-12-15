@@ -233,6 +233,21 @@ clean-all: clean
 # Development helpers
 # =============================================================================
 
+.PHONY: start
+start: build run-no-sdr
+
+.PHONY: stop
+stop: clean
+
+.PHONY: shell
+shell: build
+    docker run --rm -it \
+        --name $(CONTAINER_NAME) \
+        -p $(VNC_PORT):6080 \
+        -v $(WORKSPACE):/workspace \
+        $(if $(GRC_DIR),-e GRC_DIR=$(GRC_DIR),) \
+        $(IMAGE_NAME):$(IMAGE_TAG)
+
 .PHONY: rebuild
 rebuild: clean-all build
 
