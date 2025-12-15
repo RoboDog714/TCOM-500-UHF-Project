@@ -106,7 +106,6 @@ ENV DISPLAY=:0
 # GNU Radio workspace - mount your flowgraphs here
 # =============================================================================
 RUN mkdir -p /workspace
-VOLUME /workspace
 
 # Set GRC_DIR to auto-load all .grc files in a directory (e.g., /workspace)
 ENV GRC_DIR=""
