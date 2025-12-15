@@ -123,7 +123,7 @@ run: $(WORKSPACE)
 	@echo "NOTE: SDRPlay API service starts automatically inside the container."
 	@echo "      The container runs with --privileged for USB device access."
 	@echo ""
-	docker run -d \
+	docker run -d --rm \
 		--name $(CONTAINER_NAME) \
 		--privileged \
 		-p $(VNC_PORT):6080 \
@@ -140,7 +140,7 @@ run: $(WORKSPACE)
 run-no-sdr: $(WORKSPACE)
 	@echo "Starting container WITHOUT SDR device..."
 	@echo "Access GNU Radio Companion at: http://localhost:$(VNC_PORT)/vnc.html"
-	docker run -d \
+	docker run -d --rm \
 		--name $(CONTAINER_NAME) \
 		-p $(VNC_PORT):6080 \
 		-v $(WORKSPACE):/workspace \

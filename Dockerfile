@@ -120,4 +120,6 @@ RUN mkdir -p ~/.vnc && \
 
 EXPOSE 5900 6080
 
+COPY ./gnu-radio-grc /workspace
+
 CMD ["/bin/bash"]
