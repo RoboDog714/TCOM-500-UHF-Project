@@ -127,7 +127,6 @@ run: $(WORKSPACE)
 		--name $(CONTAINER_NAME) \
 		--privileged \
 		-p $(VNC_PORT):6080 \
-		-v $(WORKSPACE):/workspace \
 		-v /dev/bus/usb:/dev/bus/usb \
 		-v /dev/shm:/dev/shm \
 		$(if $(GRC_DIR),-e GRC_DIR=$(GRC_DIR),) \
@@ -143,16 +142,11 @@ run-no-sdr: $(WORKSPACE)
 	docker run -d --rm \
 		--name $(CONTAINER_NAME) \
 		-p $(VNC_PORT):6080 \
-		-v $(WORKSPACE):/workspace \
 		$(if $(GRC_DIR),-e GRC_DIR=$(GRC_DIR),) \
 		$(IMAGE_NAME):$(IMAGE_TAG) \
 		sleep infinity
 	@echo ""
 	@echo "Container started! Access at http://localhost:$(VNC_PORT)/vnc.html"
-
-.PHONY: shell
-shell:
-	docker exec -it $(CONTAINER_NAME) /bin/bash
 
 .PHONY: stop
 stop:
@@ -244,7 +238,6 @@ shell: build
     docker run --rm -it \
         --name $(CONTAINER_NAME) \
         -p $(VNC_PORT):6080 \
-        -v $(WORKSPACE):/workspace \
         $(if $(GRC_DIR),-e GRC_DIR=$(GRC_DIR),) \
         $(IMAGE_NAME):$(IMAGE_TAG)
 
