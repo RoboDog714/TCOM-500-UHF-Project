@@ -1,0 +1,38 @@
+Requirements,Description,Status,Verification Method,Verification Status,Comments
+,,,,,
+0. Key Milestones,Delivery of full end to end system and documentation,In Work,Delivery,In Work,
+1. Acquire hardware,Acquisition of all major hardware components,Complete,Delivery,Complete,
+2. Install and run software,Installation and execution of all major software components on RasPi,Complete,System Test,Complete,
+3. Integration,Test of individual processes and links between software components,In Work,System Demonstration,Not Started,
+3.6 End to End system function,"Full execution of system chain - Receiving UHF signal in ATSC, convert ATSC data stream to transport stream, convert transport stream to mp4 format, display of mp4 format, observation from network connected device",BLOCKED,System Demonstration,Not Started,Blocked by 3.2
+1. Acquire hardware,Acquisition of all major hardware components,Complete,Delivery,Complete,0
+1.1 Single-board Computer,Acquire Raspberry Pi 5 (RP5),Complete,Delivery,Complete,
+1.2 Software Defined Radio,Acquire Software Defined Radio (SDR) capable of receiving UHF satcom signals,Complete,Delivery,Complete,RSPdx-R2
+1.3 UHF Antenna,Acquire antenna that can receive UHF satcom signal,Complete,Delivery,Complete,SMA-W100RX2
+2. Install and run software,Installation and execution of all major software components on RasPi,In Work,System Test,In Work,0
+2.1 PiOS,Base operating system for RP5 functionality,Complete,System test,Complete,
+2.2 GNU Radio,Installation of GNURadio Software onto RP5,Complete,System test,Complete,
+2.3 SDRPlay,Installation of SDRPlay SDR software onto RP5,Complete,System test,Complete,Primarily for troubleshooting signals
+2.4 TVHeadend,Installation of TVHeadend on RP5,Complete,System test,Complete,
+3. Integration,Test of individual processes and links between software components,In Work,System Demonstration,Not Started,0
+3.1 Receive UHF signal,Receive UHF satcom signal and view within SDRPlay software,Complete,System demonstration,Complete,Signal received via computer using same software setup as RasPi; Also received on RasPi
+3.2 Receive ATSC Transport stream,Create GNU Radio receiver translation flow that converts received signal into transport stream,Complete,System demonstration,BLOCKED,Troubleshooting issue with ATSC Receive Pipeline in GNU Radio
+3.3 Convert transport stream into video format,Convert transport stream into video format,BLOCKED,System demonstration,Not Started,Blocked by 3.2
+3.4 View mp4 from external device,View mp4 from external device (such as a laptop or desktop) connected via Local Area Network (LAN),BLOCKED,System demonstration,Not Started,Blocked by 3.2
+3.5 View data stream translation to mp4 from UHF signal,Confirm GNU radio system functionality,BLOCKED,System demonstration,Not Started,Requires full GNU Radio scripts; blocked by 3.2
+3.6 End to End system function,"Full execution of system chain - Receiving UHF signal in ATSC, convert ATSC data stream to transport stream, convert transport stream to mp4 format, display of mp4 format, observation from network connected device",BLOCKED,System Demonstration,Not Started,Blocked by 3.2
+3.7 Docker Container,Containerization of deployed RasPi Software components,Complete,System test,Complete,Basic software components complete; Planned expansion to include individual files
+4. Documentation,Delivery of all documentation required,In Work,Delivery,In Work,0
+4.1 Requirements Matrix,Creation of requirements matrix for tracking of milestones,Complete,N/A,,
+4.2 Wire flow diagram,Creation of wire diagram to show data flow of system,Complete,N/A,,
+4.3 Demo video,Demonstration of end-to-end system compatibility,Complete,System Demonstration,Partial Completion,Requires fully functional end to end system for full completion (3.6)
+4.4 Process documentation,Delivery of all text components and documentation,In Work,N/A,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+
